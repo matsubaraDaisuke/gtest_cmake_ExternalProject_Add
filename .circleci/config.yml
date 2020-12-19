@@ -5,7 +5,7 @@ jobs:
       - image: gcc:6
     steps:
       - checkout
-      - run: apt-get update -y && apt-get update &&  apt-get install cmake
+      - run: apt-get update -y &&   apt-get install cmake
       - run: mkdir -p build && cd build
       - run: cmake .. && make
       - run: ./test/ExampleTests
@@ -14,7 +14,7 @@ jobs:
       - image: gcc:latest
     steps:
       - checkout
-      - run: apt-get update -y && apt-get update &&  apt-get install cmake
+      - run: apt-get update -y &&   apt-get install cmake
       - run: mkdir -p build && cd build
       - run: cmake .. && make
       - run: ./test/ExampleTests
