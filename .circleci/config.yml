@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: apt-get update -y &&   apt-get install cmake -y
       - run: mkdir -p build && cd build
-      - run: pwd
+      - run: ls -la
       #- run: cmake .. && make
       #- run: ./test/ExampleTests
   build_gcc_latest:
