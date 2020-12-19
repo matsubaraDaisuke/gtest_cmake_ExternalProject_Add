@@ -6,10 +6,8 @@ jobs:
     steps:
       - checkout
       - run: apt-get update -y &&   apt-get install cmake -y
-      - run: mkdir -p build && cd build
-      - run: ls -la
-      #- run: cmake .. && make
-      #- run: ./test/ExampleTests
+      - run: mkdir -p build && cd build && cmake .. && make
+      - run: .build/test/ExampleTests
   build_gcc_latest:
     docker:
       - image: gcc:latest
