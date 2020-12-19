@@ -2,17 +2,19 @@ version: 2.0
 jobs:
   build_gcc_6:
     docker:
-      - image: kitware/cmake:build-linux-x86_64-base-2019-08-09
+      - image: gcc:6
     steps:
       - checkout
+      - run: apt-get install -y cmake=3.5.1-1ubuntu3
       - run: mkdir -p build && cd build
       - run: cmake .. && make
       - run: ./test/ExampleTests
   build_gcc_latest:
     docker:
-      - image: kitware/cmake:latest
+      - image: gcc:latest
     steps:
       - checkout
+      - run: apt-get install -y cmake=3.5.1-1ubuntu3
       - run: mkdir -p build && cd build
       - run: cmake .. && make
       - run: ./test/ExampleTests
