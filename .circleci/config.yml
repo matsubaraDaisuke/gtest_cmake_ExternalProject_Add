@@ -7,8 +7,9 @@ jobs:
       - checkout
       - run: apt-get update -y &&   apt-get install cmake -y
       - run: mkdir -p build && cd build
-      - run: cmake .. && make
-      - run: ./test/ExampleTests
+      - run: pwd
+      #- run: cmake .. && make
+      #- run: ./test/ExampleTests
   build_gcc_latest:
     docker:
       - image: gcc:latest
