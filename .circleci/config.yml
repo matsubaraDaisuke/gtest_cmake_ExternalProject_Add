@@ -5,7 +5,7 @@ jobs:
       - image: gcc:6
     steps:
       - checkout
-      - run: apt-get install -y cmake=3.5.1-1ubuntu3
+      - run: apt-get install -y cmake
       - run: mkdir -p build && cd build
       - run: cmake .. && make
       - run: ./test/ExampleTests
@@ -14,7 +14,7 @@ jobs:
       - image: gcc:latest
     steps:
       - checkout
-      - run: apt-get install -y cmake=3.5.1-1ubuntu3
+      - run: apt-get install -y cmake
       - run: mkdir -p build && cd build
       - run: cmake .. && make
       - run: ./test/ExampleTests
