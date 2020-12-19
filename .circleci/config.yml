@@ -2,7 +2,7 @@ version: 2.0
 jobs:
   build_gcc_6:
     docker:
-      - image: gcc:6
+      - image: kitware/cmake:build-linux-x86_64-base-2019-08-09
     steps:
       - checkout
       - run: mkdir -p build && cd build
@@ -10,7 +10,7 @@ jobs:
       - run: ./test/ExampleTests
   build_gcc_latest:
     docker:
-      - image: gcc:latest
+      - image: kitware/cmake:latest
     steps:
       - checkout
       - run: mkdir -p build && cd build
