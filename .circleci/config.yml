@@ -1,8 +1,8 @@
-version: 2.1
-jobs:
-  build:
-    docker:
-      - image: circleci/node:4.8.2
-    steps:
-      - checkout
-      - run: echo "hello world"
+dependencies:
+  pre:
+    - cd build; cmake ..; make
+#  override:
+#    - cd make; make; make test
+test:
+  override:
+    - cd build; ./test/ExampleTests
